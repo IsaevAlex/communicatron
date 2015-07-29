@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
