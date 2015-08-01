@@ -1,0 +1,53 @@
+@import "materialize";
+
+/*universal*/
+
+@font-face{
+    font-family: ArchitectsDaughter;
+    src:url('fonts/ArchitectsDaughter.ttf')
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome{
+    font-family: GillSans;
+}
+
+#welcome-welcome{
+    font-size: 5em;
+    text-align: center;
+}
+
+#welcome-communicatron{
+    font-size: 9em;
+    text-align: center;
+}
+
+#button{
+ 
+    text-align: center;
+    
+}
+
+/*footer*/
+#page-wrapper {
+    min-height: 90%;
+    margin-bottom: -80px;
+    overflow: scroll;
+}
+
+* html #page-wrapper {
+    height: 70%;
+}
+
+
+
+
+
+
+
+

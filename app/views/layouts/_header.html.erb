@@ -1,0 +1,16 @@
+  <nav>
+    <div class="nav-wrapper container">
+        <i class="brand-logo material-icons">chat_bubble_outline</i>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "Sign in", '#' %></li>
+      </ul>
+       <ul class="side-nav" id="mobile-demo">
+         <li><%= link_to "Home", root_path %></li>
+         <li><%= link_to "Help", help_path %></li>
+         <li><%= link_to "Sign in", '#' %></li>
+      </ul>
+    </div>
+  </nav>
