@@ -2,11 +2,6 @@
 
 /*universal*/
 
-@font-face{
-    font-family: ArchitectsDaughter;
-    src:url('fonts/ArchitectsDaughter.ttf')
-}
-
 html, body {
     height: 100%;
     margin: 0;
@@ -43,6 +38,21 @@ html, body {
 * html #page-wrapper {
     height: 70%;
 }
+
+h1{
+    font-family: 'Roboto';
+}
+
+/*errors*/
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+
 
 
 
