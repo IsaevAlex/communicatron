@@ -5,12 +5,21 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
-        <li><%= link_to "Sign in", '#' %></li>
       </ul>
-       <ul class="side-nav" id="mobile-demo">
-         <li><%= link_to "Home", root_path %></li>
-         <li><%= link_to "Help", help_path %></li>
-         <li><%= link_to "Sign in", '#' %></li>
-      </ul>
+      <% if signed_in? %>
+            <li><%= link_to "Users", users_path %></li>
+           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i>
+              <ul id="dropdown1" class="dropdown-content"
+                <li><%= link_to "Profile", '#' %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>    
     </div>
   </nav>

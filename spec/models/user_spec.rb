@@ -12,6 +12,7 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   
   it { should be_valid }
@@ -33,18 +34,7 @@ describe User do
       end
     end
 
-    describe "with valid information" do
-      before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
-      end
-
-      it "should create a user" do
-        expect { click_button submit }.to change(User, :count).by(1)
-      end
-    end
+    
   end
     
   describe "when email is not present" do
@@ -106,11 +96,21 @@ describe User do
     it { should eq found_user.authenticate(@user.password) }
   end
 
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
+  
   describe "with invalid password" do
     let(:user_for_invalid_password) { found_user.authenticate("invalid") }
 
     it { should_not eq user_for_invalid_password }
     specify { expect(user_for_invalid_password).to be_false }
+  end
+    
+   describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
 end
 end
