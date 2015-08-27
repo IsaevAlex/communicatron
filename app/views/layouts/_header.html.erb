@@ -1,25 +1,21 @@
-  <nav>
-    <div class="nav-wrapper container">
-        <i class="brand-logo material-icons">chat_bubble_outline</i>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
-     <% if signed_in? %>
-             <ul id="dropdown1" class="dropdown-content">
-                <li><%= link_to "Profile", '#' %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li><%= link_to "Users" , '#' %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i>
-      <% else %>
+      <!-- Dropdown Trigger -->
+        <% if signed_in? %>
+            
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li><%= link_to "Users" , users_path %></li>
+            
+              <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+            
+        <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
-      <% end %>
-      </ul>    
-    </div>
-  </nav>
+        <% end %>
+    </ul>
+  </div>
+</nav>
